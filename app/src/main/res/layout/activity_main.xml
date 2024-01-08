@@ -6,7 +6,30 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity" >
 
+    <View
+        android:id="@+id/view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/edt_back"
+        app:layout_constraintBottom_toBottomOf="@+id/message"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/message" />
+
+    <ImageView
+        android:id="@+id/send"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/message"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/message"
+        app:srcCompat="@drawable/ic_baseline_send_24" />
+
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:background="@drawable/toolbar_back"
@@ -59,5 +82,31 @@
             app:layout_constraintTop_toTopOf="@+id/imageView3"
             app:srcCompat="@drawable/call"
             app:tint="@color/white" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <EditText
+        android:id="@+id/message"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@android:color/transparent"
+        android:ems="10"
+        android:inputType="text"
+        android:padding="10dp"
+        android:text="Name"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/send"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
